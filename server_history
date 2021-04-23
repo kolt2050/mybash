@@ -1,0 +1,14 @@
+#!/bin/bash
+
+users_os=$(ls /home)
+
+#echo $users_os
+
+for i in $users_os
+do
+   if [ -f /home/$i/.bash_history ]
+     then
+       cat /home/$i/.bash_history > ./logs/$i-log.txt 2>/dev/null
+   fi
+
+done
